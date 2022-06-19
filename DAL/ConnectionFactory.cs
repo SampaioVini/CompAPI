@@ -6,7 +6,7 @@ namespace CompAPI.DAL
 {
     public class ConnectionFactory
     {
-      public static string nomeConexao = "ConexaoLocal";
+      public static string nomeConexao = "ConexaoFreeAspHosting";
 
         
     public static IDbConnection GetStringConexao(IConfiguration config)

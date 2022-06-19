@@ -11,6 +11,7 @@ using System.Linq;
 using System;
 
 
+
 namespace CompAPI.Controllers
 {   
     [ApiController]
@@ -45,6 +46,86 @@ namespace CompAPI.Controllers
         }
     
         }
-         
+
+        [HttpGet("{id}")]
+    
+        public async Task<ActionResult> GetByIdAsync(int id)
+        {
+        Participante p = null;
+        using (IDbConnection conexao = ConnectionFactory.GetStringConexao(_config))
+        {
+           conexao.Open();
+           
+           StringBuilder sql = new StringBuilder();
+           sql.Append("SELECT ID as Id, ID_TIPO_PARTICIPANTE as TipoId, TX_NOME as Nome, TX_CPF as Cpf , ");
+           sql.Append("TX_EMAIL as Email FROM TB_PARTICIPANTE WHERE ID = @Id ");
+            
+           p = await conexao.QueryFirstOrDefaultAsync<Participante>(sql.ToString(), new {Id =id});
+
+           if (p != null)
+                return  Ok(p);
+           else          
+
+            return NotFound("Participante não encontrado.");
+        }
+    
+        }
+
+        [HttpPost]
+
+        public async Task<ActionResult> InsertAsync(Participante p)
+        {
+            using (IDbConnection conexao = ConnectionFactory.GetStringConexao(_config))
+            {
+              conexao.Open();
+           
+                StringBuilder sql = new StringBuilder();
+                sql.Append("SELECT INTO TB_PARTICIPANTE (ID_TIPO_PARTICIPANTE, TX_NOME, TX_CPF, TX_EMAIL) ");
+                sql.Append("VALUES (@TipoId, @Nome, @Cpf, @Email) ");
+                sql.Append("SELECT CAST(SCOPE_IDENTITY() AS INT) ");
+            
+                object o = await conexao.ExecuteScalarAsync(sql.ToString(), p);
+
+                if(o != null)
+                    p.Id = Convert.ToInt32(o);
+            }
+            return Ok(p);
+    
+        }
+        
+        [HttpPut]
+
+        public async Task<ActionResult> UpdateAsync(Participante p)
+        {
+            using (IDbConnection conexao = ConnectionFactory.GetStringConexao(_config))
+            {
+              conexao.Open();
+           
+                StringBuilder sql = new StringBuilder();
+                sql.Append("UPDATE TB_PARTICIPANTE SET ");
+                sql.Append(" ID_TIPO_PARTICIPANTE = @TipoId, TX_NOME = @Nome, TX_CPF = @Cpf, TX_EMAIL = @Email ");
+                sql.Append("WHERE ID = @Id");
+            
+                int linhasafetadas = await conexao.ExecuteAsync(sql.ToString(), p);
+                return Ok(p);
+            }
+        }
+        [HttpDelete("{id}")]
+
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            using (IDbConnection conexao = ConnectionFactory.GetStringConexao(_config))
+            {
+              conexao.Open();
+           
+                StringBuilder sql = new StringBuilder();
+                sql.Append("DELETE FROM TB_PARTICIPANTE ");
+                sql.Append("WHERE ID = @Id");
+            
+                int linhasafetadas = await conexao.ExecuteAsync(sql.ToString(), new {Id = id});
+                return Ok(linhasafetadas);
+            }
+        }
+        
     } 
 }

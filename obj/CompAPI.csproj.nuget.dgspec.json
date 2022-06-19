@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\vinicius\\CompAPI\\CompAPI.csproj": {}
+    "C:\\Users\\vinic\\Downloads\\trabalhos\\CompAPI\\CompAPI.csproj": {}
   },
   "projects": {
-    "D:\\vinicius\\CompAPI\\CompAPI.csproj": {
+    "C:\\Users\\vinic\\Downloads\\trabalhos\\CompAPI\\CompAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\vinicius\\CompAPI\\CompAPI.csproj",
+        "projectUniqueName": "C:\\Users\\vinic\\Downloads\\trabalhos\\CompAPI\\CompAPI.csproj",
         "projectName": "CompAPI",
-        "projectPath": "D:\\vinicius\\CompAPI\\CompAPI.csproj",
-        "packagesPath": "C:\\Users\\Aluno\\.nuget\\packages\\",
-        "outputPath": "D:\\vinicius\\CompAPI\\obj\\",
+        "projectPath": "C:\\Users\\vinic\\Downloads\\trabalhos\\CompAPI\\CompAPI.csproj",
+        "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vinic\\Downloads\\trabalhos\\CompAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Aluno\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\vinic\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -48,6 +41,10 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.0.123, )"
+            },
+            "Dapper.Contrib": {
+              "target": "Package",
+              "version": "[2.0.78, )"
             },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
@@ -76,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }
