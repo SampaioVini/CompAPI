@@ -104,3 +104,5 @@ C:\Users\vinic\Downloads\trabalhos\CompAPI\obj\Debug\net5.0\scopedcss\bundle\Com
 C:\Users\vinic\Downloads\trabalhos\CompAPI\obj\Debug\net5.0\CompAPI.RazorTargetAssemblyInfo.cache
 C:\Users\vinic\Downloads\trabalhos\CompAPI\obj\Debug\net5.0\CompAPI.csproj.CopyComplete
 C:\Users\vinic\Downloads\trabalhos\CompAPI\obj\Debug\net5.0\CompAPI.genruntimeconfig.cache
+D:\vinicius\CompAPI\bin\Debug\net5.0\CompAPI.StaticWebAssets.xml
+D:\vinicius\CompAPI\bin\Debug\net5.0\Dapper.Contrib.dll
